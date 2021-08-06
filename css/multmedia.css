@@ -1,0 +1,54 @@
+.img-violin {
+    height: 5rem;
+}
+
+.p0 {
+    text-indent: 2em;
+}
+
+h1 {
+    color: rgba(182, 140, 140, 0.507);
+}
+
+.navbar {
+    font-size: 3vh;
+    justify-content: space-evenly;
+    background-color: rgb(201, 161, 89);
+    margin: 0;
+}
+
+.productos {
+
+    margin: auto;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+.card-body {
+    background-color: rgba(182, 140, 140, 0.507)
+}
+
+.card {
+    background-color: #ececec;
+}
+
+tr {
+    font-size: 1.5vh;
+}
+
+tr img {
+    height: 6rem;
+    width: 6rem;
+}
+
+footer {
+    text-align: center;
+    color: black;
+}
+
+.contactos {
+    display: flex;
+    justify-content: center;
+}
