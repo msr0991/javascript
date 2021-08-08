@@ -9,7 +9,7 @@ stockP.addEventListener('click', agregarP);
 tablaC.addEventListener('click', borrarP);
 vaciarBoton.addEventListener('click', vaciarC);
 document.addEventListener('DOMContentLoaded', () => {
-    
+
 	if (JSON.parse(localStorage.getItem('carrito'))) {
 		carrito = JSON.parse(localStorage.getItem('carrito'));
 		productoAgregadoHTML();
@@ -62,7 +62,7 @@ function datosP(divPadre) {
 			if (producto.id === productoAgregado.id) {
 				producto.cantidad++;
 				producto.precio = `$${Number(productoAgregado.precio.slice(1)) * producto.cantidad}`;
-                return producto;
+				return producto;
 			} else {
 				return producto;
 			}
@@ -81,7 +81,13 @@ function productoAgregadoHTML() {
 	productoBorradoHTML();
 
 	carrito.forEach(producto => {
-		const { imagen, nombre, precio, cantidad, id } = producto;
+		const {
+			imagen,
+			nombre,
+			precio,
+			cantidad,
+			id
+		} = producto;
 
 		const row = document.createElement('tr');
 		row.innerHTML = `
@@ -115,15 +121,29 @@ function guardarCarritoStorage() {
 
 
 /* Boton CheckOut con jQuery */
-$("#vaciar-carrito").append('<button class="btn btn-outline-danger nuevoBoton">Checkout</button>');
+$("#vaciar-carrito").append('<button class="btn btn-outline-danger nuevoBoton">COMPRAR</button>');
 
-$(document).on("click", ".nuevoBoton", function(e) {
+$('.nuevoBoton').click(function (e) {
 	swal(
 		'Gracias por su compra!',
 		'Nos contactaremos con usted a la brevedad',
 		'SALIR',
-	)
+	);
 	return false;
+});
+
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 300) {
+		$('a.scroll-top').fadeIn('slow');
+	} else {
+		$('a.scroll-top').fadeOut('slow');
+	}
+});
+$('a.scroll-top').click(function (event) {
+	event.preventDefault();
+	$('html, body').animate({
+		scrollTop: 0
+	}, 600);
 });
 
 
@@ -175,9 +195,14 @@ const ContactoComponent = {
 	}
 }
 
-const links = [
-	{ path: '/nosotros', component: NosotrosComponent },
-	{ path: '/contacto', component: ContactoComponent }
+const links = [{
+		path: '/nosotros',
+		component: NosotrosComponent
+	},
+	{
+		path: '/contacto',
+		component: ContactoComponent
+	}
 ];
 
 function parseLocation() {
@@ -191,7 +216,9 @@ function findComponent(noHash) {
 function router() {
 	const noHash = parseLocation();
 
-	const { component = [] } = findComponent(noHash) || {};
+	const {
+		component = []
+	} = findComponent(noHash) || {};
 
 	const app = document.querySelector('.productos');
 	app.innerHTML = component.render();

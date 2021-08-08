@@ -1,117 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css"
+    />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/multmedia.css">
-    <title>Document</title>
-</head>
-<body>
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+    <script src="bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="bower_components/sweetalert2/dist/sweetalert2.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/multmedia.css" />
+    <title>Mi tienda</title>
+  </head>
+  <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light menuNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.html"><img src="img/violin2.png" alt="" class="img-violin"></a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 col">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Portada</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#/nosotros">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#/contacto">Contacto</a></li>
-                </ul>
-                <form class="d-flex">
-                    <button class="btn btn-secondary dropdown-toggle col" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="bi-cart-fill me-1">Carrito</i>
-                    </button>
-                    <div class="dropdown-menu row" id="carrito" aria-labelledby="dropdownMenuButton">
-                        <table id="lista-carrito dropdown-menu" class="u-full-width">
-                            <thead>
-                                <tr>
-                                    <th>Imagen</th>
-                                    <th>Nombre</th>
-                                    <th>Precio</th>
-                                    <th>Cantidad</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                        <a href="#" id="vaciar-carrito">
-                            <button class="btn btn-warning">Vaciar Carrito</button></a>
-                      </div>
-                </form>
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="index.html"
+          ><img src="img/violin2.png" alt="" class="img-violin"
+        /></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 col">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Portada</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/nosotros">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/contacto">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <button
+              class="btn btn-secondary dropdown-toggle col"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="bi-cart-fill me-1">Carrito</i>
+            </button>
+            <div
+              class="dropdown-menu row"
+              id="carrito"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <table id="lista-carrito dropdown-menu" class="u-full-width">
+                <thead>
+                  <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+              <a href="#" id="vaciar-carrito">
+                <button class="btn btn-warning">Vaciar Carrito</button></a
+              >
             </div>
+          </form>
         </div>
+      </div>
     </header>
-<div class="productos container">
-    <div class="row">
-    <div class="card col">
-            <img src="img/violin guarneri.jpg" class="card-img-top" alt="producto1">
-            <div class="card-body">
-                <h2 class="card-text">Violin Modelo Guarneri - 4/4</h2>
-                <p class="precio">$340000</p>
-                <button type="button" class="btn btn-dark botn" data-id="1">COMPRAR</button>
-            </div>
-    </div>
+    <div class="productos container">
+      <div class="row">
+        <div class="card col">
+          <img
+            src="img/violin guarneri.jpg"
+            class="card-img-top"
+            alt="producto1"
+          />
+          <div class="card-body">
+            <h2 class="card-text">Violin Modelo Guarneri - 4/4</h2>
+            <p class="precio">$340000</p>
+            <button type="button" class="btn btn-dark botn" data-id="1">
+              COMPRAR
+            </button>
+          </div>
+        </div>
 
-    <div class="card col">
-            <img src="img/violin evah pirazzi.jpg" class="card-img-top" alt="producto2">
-            <div class="card-body">
-                <h2 class="card-text">Set Evah Pirazzi - Violin 4/4</h2>
-                <p class="precio">$12500</p>
-                <button type="button" class="btn btn-dark botn" data-id="2">COMPRAR</button>
-            </div>
-    </div>
+        <div class="card col">
+          <img
+            src="img/violin evah pirazzi.jpg"
+            class="card-img-top"
+            alt="producto2"
+          />
+          <div class="card-body">
+            <h2 class="card-text">Set Evah Pirazzi - Violin 4/4</h2>
+            <p class="precio">$12500</p>
+            <button type="button" class="btn btn-dark botn" data-id="2">
+              COMPRAR
+            </button>
+          </div>
+        </div>
 
-    <div class="card col">
-            <img src="img/estuche violin rectangular.jpg" class="card-img-top" alt="producto3">
-            <div class="card-body">
-                <h2 class="card-text">Estuche rectangular Violin 4/4</h2>
-                <p class="precio">$33000</p>
-                <button type="button" class="btn btn-dark botn" data-id="3">COMPRAR</button>
-            </div>
-    </div>
-    </div>
+        <div class="card col">
+          <img
+            src="img/estuche violin rectangular.jpg"
+            class="card-img-top"
+            alt="producto3"
+          />
+          <div class="card-body">
+            <h2 class="card-text">Estuche rectangular Violin 4/4</h2>
+            <p class="precio">$33000</p>
+            <button type="button" class="btn btn-dark botn" data-id="3">
+              COMPRAR
+            </button>
+          </div>
+        </div>
+      </div>
 
-    <div class="row">
-    <div class="card col">
-            <img src="img/viola-jay-haide-maggini.jpg" class="card-img-top" alt="producto4">
-            <div class="card-body">
-                <h2 class="card-text">Viola Modelo Maggini - 16.5''</h2>
-                <p class="precio">$350000</p>
-                <button type="button" class="btn btn-dark botn" data-id="4">COMPRAR</button>
-            </div>
-    </div>
+      <div class="row">
+        <div class="card col">
+          <img
+            src="img/viola-jay-haide-maggini.jpg"
+            class="card-img-top"
+            alt="producto4"
+          />
+          <div class="card-body">
+            <h2 class="card-text">Viola Modelo Maggini - 16.5''</h2>
+            <p class="precio">$350000</p>
+            <button type="button" class="btn btn-dark botn" data-id="4">
+              COMPRAR
+            </button>
+          </div>
+        </div>
 
-    <div class="card col">
-            <img src="img/obligato viola.jpg" class="card-img-top" alt="producto5">
-            <div class="card-body">
-                <h2 class="card-text">Set Obligato - Viola 4/4</h2>
-                <p class="precio">$18700</p>
-                <button type="button" class="btn btn-dark botn" data-id="5">COMPRAR</button>
-            </div>
-    </div>
+        <div class="card col">
+          <img
+            src="img/obligato viola.jpg"
+            class="card-img-top"
+            alt="producto5"
+          />
+          <div class="card-body">
+            <h2 class="card-text">Set Obligato - Viola 4/4</h2>
+            <p class="precio">$18700</p>
+            <button type="button" class="btn btn-dark botn" data-id="5">
+              COMPRAR
+            </button>
+          </div>
+        </div>
 
-    <div class="card col">
-            <img src="img/viola rectangular.jpg" class="card-img-top" alt="producto6">
-            <div class="card-body">
-                <h2 class="card-text">Estuche rectangular Viola 4/4</h2>
-                <p class="precio">$56728</p>
-                <button type="button" class="btn btn-dark botn" data-id="6">COMPRAR</button>
-            </div>
+        <div class="card col">
+          <img
+            src="img/viola rectangular.jpg"
+            class="card-img-top"
+            alt="producto6"
+          />
+          <div class="card-body">
+            <h2 class="card-text">Estuche rectangular Viola 4/4</h2>
+            <p class="precio">$56728</p>
+            <button type="button" class="btn btn-dark botn" data-id="6">
+              COMPRAR
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-</div>
-<footer class="text-light bg-dark text-center">
-    <p>Moreno 5700 - Luthier Rojo</p>
-</footer>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
-</body>
+    <footer class="text-light bg-dark text-center">
+      <p>Moreno 5700 - Luthier Rojo</p>
+    </footer>
+    <script src="sweetalert2.all.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

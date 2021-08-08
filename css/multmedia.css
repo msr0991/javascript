@@ -1,54 +1,73 @@
 .img-violin {
-    height: 5rem;
+  height: 5rem;
+}
+
+a.scroll-top {
+  color: #fff;
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 50px;
+  right: 30px;
+  font-size: 20px;
+  background: #222;
+  border-radius: 3px !important;
+  text-align: center;
+  border: 1px solid hsla(0, 0%, 78%, 0.3);
+}
+a.scroll-top i {
+  position: relative;
+  top: 2px;
 }
 
 .p0 {
-    text-indent: 2em;
+  text-indent: 2em;
 }
 
 h1 {
-    color: rgba(182, 140, 140, 0.507);
+  color: rgba(182, 140, 140, 0.507);
 }
 
 .navbar {
-    font-size: 3vh;
-    justify-content: space-evenly;
-    background-color: rgb(201, 161, 89);
-    margin: 0;
+  font-size: 3vh;
+  justify-content: space-evenly;
+  background-color: rgb(201, 161, 89);
+  margin: 0;
 }
 
 .productos {
-
-    margin: auto;
+  margin: auto;
 }
 
 h2 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .card-body {
-    background-color: rgba(182, 140, 140, 0.507)
+  background-color: rgba(182, 140, 140, 0.507);
 }
 
 .card {
-    background-color: #ececec;
+  background-color: #ececec;
 }
 
 tr {
-    font-size: 1.5vh;
+  font-size: 1.5vh;
 }
 
 tr img {
-    height: 6rem;
-    width: 6rem;
+  height: 6rem;
+  width: 6rem;
 }
 
 footer {
-    text-align: center;
-    color: black;
+  text-align: center;
+  color: black;
 }
 
 .contactos {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
